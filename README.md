@@ -13,6 +13,7 @@ see https://docs.google.com/presentation/d/1rskg76deerSPSr-z_j7XmmDLDvp7EZdHuil0
     oc process --parameters kapua-template
     oc process  kapua-template |oc create -f -
 or
+
     oc process  kapua-template -p ELASTIC_SEARCH_MEMORY=512m |oc create -f -
 
 5 pods will be created an started. Wait util they are running.
@@ -48,6 +49,16 @@ test how scaling works with KAPUA on OpenShift
 
 ### use MariaDB
 Currently only H2 database works for KAPUA, because the MySQL/MariaDB driver is not available on the KAPUA images.
+
+Setup done with the following paramters:
+* commons.db.name=$MYSQL_NAME / sampledb
+* commons.db.username=$MYSQL_USER / user
+* commons.db.password=$MYSQL_PASSWORD /password
+* commons.db.jdbcConnectionUrlResolver=mariadb / MariaDB
+* commons.db.jdbc.driver=org.mariadb.jdbc.Driver
+* commons.db.connection.scheme=jdbc:mariab
+
+see https://github.com/eclipse/kapua/issues/1498
 
 ## Tested on 
 * minishift v1.11.0+d7f374a
