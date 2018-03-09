@@ -3,6 +3,9 @@ CDW: Connect the data of the world
 
 The project  is for running the KAPUA project on Openshift.
 
+## Presentation
+see https://docs.google.com/presentation/d/1rskg76deerSPSr-z_j7XmmDLDvp7EZdHuil0hgSzR8M/edit#slide=id.p
+
 ## Installation
 
     oc create new-project kapua
@@ -46,7 +49,7 @@ test how scaling works with KAPUA on OpenShift
 ### use MariaDB
 Currently only H2 database works for KAPUA, because the MySQL/MariaDB driver is not available on the KAPUA images.
 
-## Tested on MiniShift/CDK
-minishift v1.11.0+d7f374a
-CDK v3.3.0-1
-
+## Tested on 
+* minishift v1.11.0+d7f374a
+* CDK v3.3.0-1
+* OpenShift CDK 3.7.23
